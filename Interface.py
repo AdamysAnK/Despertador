@@ -16,15 +16,7 @@ from customtkinter import *
 def ver_hora():
     global agora_string
     agora = dt.datetime.now()
-    hora = agora.strftime("%I")  
-    minuto = agora.strftime("%M")  
-    segundo = agora.strftime("%S")  
-
-    horaconvertida = int(hora)
-    horasomada = horaconvertida + 12
-
-    horareal = hora + ":" + minuto + ":" + segundo
-  
+    agora_string = agora.strftime("%I:%M:%S")    
     label_hora = CTkLabel(janela, text=agora_string)
     label_hora.place(x=15, y=10)
     label_hora.after(100,ver_hora)
