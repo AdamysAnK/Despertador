@@ -4,7 +4,7 @@ from customtkinter import *
 # import pygame as pg
 
 
-
+#rlr
 
 # def despertar():
 #     alarme = ('09:01:00')#so colocar um input nisso ou chockbox e ja era
