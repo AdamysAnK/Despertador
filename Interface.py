@@ -19,8 +19,6 @@ def ver_hora():
 
     agora_string = agora.strftime("%H:%M:%S")    
 
-
-
     label_hora = CTkLabel(janela, text=agora_string)
     label_hora.place(x=15, y=10)
     label_hora.after(100,ver_hora)
