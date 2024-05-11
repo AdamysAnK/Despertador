@@ -3,7 +3,7 @@ import datetime as dt
 from customtkinter import *
 # import pygame as pg
 
-
+#cwncchingi
 #rlr
 
 # def despertar():
