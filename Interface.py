@@ -1,7 +1,7 @@
 from tkinter import *
 import datetime as dt
 from customtkinter import *
-from googletrans import Translator
+
 # import pygame as pg
 #fkfkkf
 #cwncchingi
@@ -17,13 +17,25 @@ from googletrans import Translator
 def ver_hora():
     global agora_string
     agora = dt.datetime.now()
-    tradutor = Translator()
-    dia_atual = agora.strftime("%A")
-    dia_atual_trans = tradutor.translate(dia_atual,src="pt").text
-    print(dia_atual_trans)
-
+    dia_atual = agora.strftime("%w")
+    if dia_atual == '7':
+        dia = "Domingo"      
+    if dia_atual == '6':
+        dia = "Sábado"  
+    if dia_atual == '5':
+        dia = "Sexta"
+    if dia_atual == '4':
+        dia = "Quinta"
+    if dia_atual == '3':
+        dia = "Quarta"
+    if dia_atual == '2':
+        dia = "Terça"
+    if dia_atual == '1':
+        dia = "Segunda"
     
-    agora_string = agora.strftime("%H:%M:%S") 
+    agora_string = agora.strftime(f"""
+{dia}
+%H:%M:%S""") 
     
    
 
