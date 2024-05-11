@@ -1,6 +1,7 @@
 from tkinter import *
 import datetime as dt
 from customtkinter import *
+from googletrans import Translator
 # import pygame as pg
 #fkfkkf
 #cwncchingi
@@ -16,17 +17,32 @@ from customtkinter import *
 def ver_hora():
     global agora_string
     agora = dt.datetime.now()
+    tradutor = Translator()
+    dia_atual = agora.strftime("%A")
+    dia_atual_trans = tradutor.translate(dia_atual,src="pt").text
+    print(dia_atual_trans)
 
-    agora_string = agora.strftime("%H:%M:%S")    
+    
+    agora_string = agora.strftime("%H:%M:%S") 
+    
+   
 
     label_hora = CTkLabel(janela, text=agora_string)
     label_hora.place(x=15, y=10)
+    
+    
     label_hora.after(100,ver_hora)
 
+
+
+cont=1
 # funçao abrir nova janela
 def nova_janela():
-    cont=1
+    global cont
+    global janela_add_clock
     if cont==1:
+        cont+=1
+
         janela_add_clock = CTk()
         
         janela_add_clock.geometry('400x300')
@@ -36,7 +52,7 @@ def nova_janela():
         label_hora = CTkLabel(janela_add_clock, text="Hora",font=("Arial",20))
         label_hora.place(x=10, y=20)
         
-        hora = ('01','02','03','04','05','06','07','08','09','10','11','12')
+        hora = tuple(str(i).zfill(2) for i in range(24))
         box_hora = CTkComboBox(janela_add_clock,values=hora,width=60,height=30)
         box_hora.place(x=10, y=50)
         
@@ -58,12 +74,15 @@ def nova_janela():
         box_min = CTkComboBox(janela_add_clock,values = segundos,width=60,height=30)
         box_min.place(x=210, y=50)
         
-        # PM/AM
-        fuso = CTkComboBox(janela_add_clock,values=('PM','AM'),width=60,height=30)
-        fuso.place(x= 310, y= 50)       
-    
-        
-        janela_add_clock.mainloop()
+        # DIAS_________________
+        seg = CTkCheckBox(janela_add_clock,text='Seg',onvalue='')
+        seg.place(x=10, y=10)
+
+        janela_add_clock.mainloop() 
+
+    else:
+        janela_add_clock.destroy()
+        cont=1
 
 janela = CTk()
 
