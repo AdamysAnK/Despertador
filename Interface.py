@@ -17,7 +17,21 @@ def ver_hora():
     global agora_string
     agora = dt.datetime.now()
     agora_string = agora.strftime("%I:%M:%S")    
-    label_hora = CTkLabel(janela, text=agora_string)
+
+    hora = agora.strftime("%I")
+    minutos = agora.strftime("%M")    
+    segundos = agora.strftime("%S")     
+
+    horaconvertida = int(hora)
+
+    horaconvertida = horaconvertida + 12
+
+    minutoconvertida = int(minutos)
+    segundoconvertida = int(segundos)
+
+    horacompleta = str(horaconvertida) + ":" + str(minutoconvertida) + ":" + str(segundoconvertida)
+
+    label_hora = CTkLabel(janela, text=horacompleta)
     label_hora.place(x=15, y=10)
     label_hora.after(100,ver_hora)
 
