@@ -1,4 +1,4 @@
-1. **Apolo:**
+1. **AnarK:**
    - Responsável pela implementação das funções de adicionar e remover alarmes.
    - Desenvolver a função de repetição de alarmes e configurações de alarme.
    - Arquivo: `funcoes.py`

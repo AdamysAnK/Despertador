@@ -3,8 +3,8 @@ import datetime
 while True:
     # Usaremos essa estrutura para sempre atualizar o valor da hora/minutos/segundos
     agora = datetime.datetime.now()
-    agora_string = agora.strftime("%I:%M:%S")
-    print(agora_string)
+    # agora_string = agora.strftime("%I:%M:%S")
+    print(agora)
     break
     
     
