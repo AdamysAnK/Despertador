@@ -1,4 +1,4 @@
-1. **AnarK:**
+1. **Yakuu:**
    - Responsável pela implementação das funções de adicionar e remover alarmes.
    - Desenvolver a função de repetição de alarmes e configurações de alarme.
    - Arquivo: `funcoes.py`
@@ -12,3 +12,4 @@
    - Responsável pela implementação das funções de verificar alarmes e despertar.
    - Desenvolver a integração com música, alarmes especiais e notificações.
    - Arquivo: `integracao.py`
+
